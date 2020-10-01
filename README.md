@@ -30,7 +30,6 @@ Almacenarlos en BD
 ## Comando para compilar
 *npx tsc -w*
 
-
 ## Creamos el repositorio remoto y los comandos locales son
 git init
 git add .
@@ -44,3 +43,7 @@ Proyecto anterior con bases de datos
 
 ## Creamos la capeta view
 Tendrá la estructura de menú y la entrada de teclado
+
+## Creamos el index.js 
+Abrimos una shell para ejecución y otra para ejecución con
+*node dist/src/index*
