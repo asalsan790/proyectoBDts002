@@ -1,26 +1,36 @@
 import readline from 'readline'
 
-let rl: any
+let readlineI: readline.Interface
 
 let leeLinea = (prompt: string) =>  {
-    rl = readline.createInterface({
+    readlineI = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
     })
     return new Promise<string>( (resuelta: any, rechazada: any) => {
-        rl.question(`${prompt}: `, (cadenaEntrada: string) => {
+        readlineI.question(`${prompt}: `, (cadenaEntrada: string) => {
                 resuelta (cadenaEntrada)
             }
         )
     })
 }
 
+export let leerTeclado = async (prompt: string) => {
+    let valor: string
+    valor = await leeLinea(prompt)
+    readlineI.close()
+    return valor
+}
+
+
+/*
 export async function leer(prompt: string){
     let valor: string
     valor = await leeLinea(prompt)
     rl.close()
     return valor
 }
+*/
 
 
 
